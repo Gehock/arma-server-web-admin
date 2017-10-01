@@ -1,3 +1,15 @@
-<td style="width: 100%;">
-  <a href='/api/logs/<%-name%>'><%-name%></a>
+<td class="col-sm-6">
+  <% if (size < 100000000) { %>
+    <a href='/api/logs/<%-name%>/view'><%-name%></a>
+  <% } else { %>
+    <%-name%>
+  <% } %>
+</td>
+<td class="col-sm-3" style="text-align: right">
+  <%- String(size).split('').reverse().map(function (char, idx) { if (idx % 3 === 0) { char = char + '\u202f' } return char }).reverse().join('').trim()  %>
+</td>
+<td class="col-sm-3">
+  <a class="btn btn-success btn-xs" href="/api/logs/<%-name%>/download">
+    <span class="glyphicon glyphicon-download">Download</span>
+  </a>
 </td>
