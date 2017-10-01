@@ -8,7 +8,8 @@ define(function (require) {
   
   return Backbone.Model.extend({
     defaults: {
-      name: ''
+      name: '',
+      size: 0,
     }
   });
   

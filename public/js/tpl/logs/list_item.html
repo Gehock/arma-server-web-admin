@@ -1,3 +1,6 @@
-<td style="width: 100%;">
+<td class="col-sm-9">
   <a href='/api/logs/<%-name%>'><%-name%></a>
+</td>
+<td class="col-sm-3" style="text-align: right">
+  <%- String(size).split('').reverse().map(function (char, idx) { if (idx % 3 === 0) { char = char + '\u202f' } return char }).reverse().join('').trim()  %>
 </td>
